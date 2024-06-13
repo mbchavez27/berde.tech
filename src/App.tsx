@@ -36,8 +36,8 @@ const App = () => {
     <>
       <div className="bg-gradient-to-b from-[#9FE9C1] to-[#1A6A44] h-screen font-Montserrat">
         <div className="h-screen bg-noisePattern absolute inset-0">
-          <div className="font-bold flex h-screen items-center justify-around">
-            <div className="flex flex-col items-start">
+          <div className="font-bold flex h-screen items-center justify-between">
+            <div className="flex flex-col items-start mx-36">
               <div className="text-transparent text-9xl bg-clip-text bg-gradient-to-r from-[#2D8A63] to-[#295B02]">
                 berde.
               </div>
@@ -51,10 +51,10 @@ const App = () => {
                 Contact Us
               </div>
             </div>
-            <div className="flex flex-col items-start">
+            <div className="flex flex-col items-start mx-36">
+              {/* <Projects></Projects>
               <Projects></Projects>
-              <Projects></Projects>
-              <Projects></Projects>
+              <Projects></Projects> */}
             </div>
           </div>
         </div>
