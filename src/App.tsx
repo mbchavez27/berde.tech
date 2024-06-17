@@ -19,10 +19,10 @@
 //           </svg>
 //         </div>
 //         <div className="flex flex-col">
-//           <div className="text-transparent text-4xl bg-clip-text bg-gradient-to-r from-[#2D8A63] to-[#025B2B]">
+//           <div className="text-transparent text-2xl sm:text-4xl bg-clip-text bg-gradient-to-r from-[#2D8A63] to-[#025B2B]">
 //             Archers API
 //           </div>
-//           <div className="font-normal text-transparent text-xl bg-clip-text bg-gradient-to-r from-[#2D8A63] to-[#025B2B]">
+//           <div className="font-normal text-transparent text-lg sm:text-xl bg-clip-text bg-gradient-to-r from-[#2D8A63] to-[#025B2B]">
 //             A university-wide access API for DLSU data.
 //           </div>
 //         </div>
@@ -36,22 +36,22 @@ const App = () => {
     <>
       <div className="bg-gradient-to-b from-[#9FE9C1] to-[#1A6A44] h-screen font-Montserrat">
         <div className="h-screen bg-noisePattern absolute inset-0">
-          <div className="font-bold flex h-screen items-center justify-between">
-            <div className="flex flex-col items-start mx-36">
-              <div className="text-transparent text-9xl bg-clip-text bg-gradient-to-r from-[#2D8A63] to-[#295B02]">
+          <div className="font-bold flex h-screen items-center sm:justify-between justify-around sm:flex-row flex-col">
+            <div className="flex flex-col items-start mx-8 sm:mx-36">
+              <div className="text-transparent text-8xl sm:text-9xl bg-clip-text bg-gradient-to-r from-[#2D8A63] to-[#295B02]">
                 berde.
               </div>
-              <div className="text-transparent text-xl bg-clip-text bg-gradient-to-r from-[#153000] to-[#429600]">
+              <div className="text-transparent text-lg sm:text-xl bg-clip-text bg-gradient-to-r from-[#153000] to-[#429600]">
                 Builders of Emerging Resources
               </div>
-              <div className="text-transparent text-xl bg-clip-text bg-gradient-to-r from-[#153000] to-[#429600]">
+              <div className="text-transparent text-lg sm:text-xl bg-clip-text bg-gradient-to-r from-[#153000] to-[#429600]">
                 for Digital Entrepreneurs.
               </div>
-              <div className="font-normal text-transparent text-xl bg-clip-text bg-gradient-to-r from-[#BCEBC1] to-[#6FC978] mt-6">
+              <div className="font-normal text-transparent text-lg sm:text-xl bg-clip-text bg-gradient-to-r from-[#BCEBC1] to-[#6FC978] mt-6">
                 Contact Us
               </div>
             </div>
-            <div className="flex flex-col items-start mx-36">
+            <div className="flex flex-col items-start sm:mx-36">
               {/* <Projects></Projects>
               <Projects></Projects>
               <Projects></Projects> */}
