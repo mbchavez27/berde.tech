@@ -41,15 +41,15 @@ const App = () => {
               <div className="text-transparent text-9xl bg-clip-text bg-gradient-to-r from-[#2D8A63] to-[#295B02]">
                 berde.
               </div>
-              <div className="text-transparent text-xl bg-clip-text bg-gradient-to-r from-[#153000] to-[#429600]">
+              <div className="text-transparent text-xl bg-clip-text bg-gradient-to-r from-[#153000] to-[#186740]">
                 Builders of Emerging Resources
               </div>
-              <div className="text-transparent text-xl bg-clip-text bg-gradient-to-r from-[#153000] to-[#429600]">
+              <div className="text-transparent text-xl bg-clip-text bg-gradient-to-r from-[#153000] to-[#186740]">
                 for Digital Entrepreneurs.
               </div>
-              <div className="font-normal text-transparent text-xl bg-clip-text bg-gradient-to-r from-[#BCEBC1] to-[#6FC978] mt-6">
+              <a href="#" className="font-bold underline text-transparent text-xl bg-clip-text bg-gradient-to-r from-[#153000] to-[#295B02] mt-6">
                 Contact Us
-              </div>
+              </a>
             </div>
             <div className="flex flex-col items-start mx-36">
               {/* <Projects></Projects>
