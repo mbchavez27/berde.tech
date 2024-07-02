@@ -6,26 +6,19 @@ import "swiper/css/pagination";
 import "swiper/css/free-mode";
 
 import { FreeMode, Pagination } from "swiper/modules";
-import { RxArrowTopRight } from "react-icons/rx";
-
-const Project = () => {
-  return (
-    <>
-      {/* <div className="w-[500px] h-56 rounded-[36px] shadow-xl bg-gray-400"></div> */}
-      <div className="w-[500px] h-52 rounded-[36px] shadow-xl relative bg-[url('./assets/ls360.png')] bg-cover bg-center flex flex-col justify-end px-12 py-8 text-white font-Montserrat font-bold">
-        <div className="absolute inset-0 bg-black opacity-50 rounded-[36px]"></div>
-        <div className="relative z-10">
-          <div className="text-4xl">theRange</div>
-        </div>
-      </div>
-    </>
-  );
-};
 
 const Projects = () => {
+  const ProjectList = [
+    {
+      name: "Archers API",
+      bgPicture: "ls360.png",
+      description: "",
+      link: "https://a.berde.co/",
+    },
+  ];
   return (
     <>
-      <div className="flex justify-between">
+      <div className="flex justify-around">
         <div className="flex mx-12 flex-col h-screen justify-between py-10 px-20">
           <div>
             <Link
@@ -72,11 +65,11 @@ const Projects = () => {
             </Link>
           </div>
         </div>
-        <div className="mx-auto">
+        <div className="mx-36">
           <Swiper
             direction="vertical"
             slidesPerView={3}
-            spaceBetween={60}
+            spaceBetween={50}
             freeMode={true}
             pagination={{
               clickable: true,
@@ -84,18 +77,22 @@ const Projects = () => {
             modules={[FreeMode, Pagination]}
             className="mySwiper h-screen"
           >
-            <SwiperSlide>
-              <Project />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Project />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Project />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Project />
-            </SwiperSlide>
+            {ProjectList.map((project) => {
+              return (
+                <>
+                  <SwiperSlide className="h-full flex items-center justify-center">
+                    <div
+                      className={`w-[750px] h-64 rounded-[36px] shadow-xl relative bg-[url('./assets/${project.bgPicture}')] bg-cover bg-center flex flex-col justify-end px-12 py-8 text-white font-Montserrat font-bold`}
+                    >
+                      <div className="absolute inset-0 bg-black opacity-50 rounded-[36px]"></div>
+                      <div className="relative z-10">
+                        <div className="text-4xl">{project.name}</div>
+                      </div>
+                    </div>
+                  </SwiperSlide>
+                </>
+              );
+            })}
           </Swiper>
         </div>
       </div>
