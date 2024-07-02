@@ -17,24 +17,6 @@ const Projects = () => {
         "An API that enables users to access the data of each classes in DLSU",
       link: "https://a.berde.co/",
     },
-    {
-      name: "theRange",
-      bgPicture: "./assets/ls360.png",
-      description: "",
-      link: "https://a.berde.co/",
-    },
-    {
-      name: "theRange",
-      bgPicture: "./assets/ls360.png",
-      description: "",
-      link: "https://a.berde.co/",
-    },
-    {
-      name: "theRange",
-      bgPicture: "./assets/ls360.png",
-      description: "",
-      link: "https://a.berde.co/",
-    },
   ];
 
   const [currentProject, setCurrentProject] = useState(0);
