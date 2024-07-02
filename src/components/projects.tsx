@@ -9,6 +9,7 @@ import { FreeMode, Pagination } from "swiper/modules";
 import { useEffect, useState } from "react";
 
 const Projects = () => {
+  //Gives Lists of Projects
   const ProjectList = [
     {
       name: "Archers API",
@@ -19,18 +20,29 @@ const Projects = () => {
     },
   ];
 
-  const [currentProject, setCurrentProject] = useState(0);
+  const [currentProject, setCurrentProject] = useState(0); //Gets the Current Project Index
   const [currentProjectDetails, setCurrentProjectDetails] = useState(
     ProjectList[currentProject]
-  );
+  ); //Gets the Project Details of the Current Project
+
   useEffect(() => {
     setCurrentProjectDetails(ProjectList[currentProject]);
-  }, [currentProject]);
-  console.log(currentProjectDetails);
+  }, [currentProject]); //Sets the Current Project Details
+
+  //Animates onPage Load
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
 
   return (
     <>
-      <div className="flex justify-between">
+      <div
+        className={`flex justify-between transform transition duration-500 ${
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+        }`} //Animates on Page Load
+      >
         <div className="flex flex-col h-screen justify-between py-10 px-20">
           <div>
             <Link
