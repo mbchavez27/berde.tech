@@ -6,20 +6,50 @@ import "swiper/css/pagination";
 import "swiper/css/free-mode";
 
 import { FreeMode, Pagination } from "swiper/modules";
+import { useEffect, useState } from "react";
 
 const Projects = () => {
   const ProjectList = [
     {
       name: "Archers API",
-      bgPicture: "ls360.png",
+      bgPicture: "./assets/ls360.png",
+      description:
+        "An API that enables users to access the data of each classes in DLSU",
+      link: "https://a.berde.co/",
+    },
+    {
+      name: "theRange",
+      bgPicture: "./assets/ls360.png",
+      description: "",
+      link: "https://a.berde.co/",
+    },
+    {
+      name: "theRange",
+      bgPicture: "./assets/ls360.png",
+      description: "",
+      link: "https://a.berde.co/",
+    },
+    {
+      name: "theRange",
+      bgPicture: "./assets/ls360.png",
       description: "",
       link: "https://a.berde.co/",
     },
   ];
+
+  const [currentProject, setCurrentProject] = useState(0);
+  const [currentProjectDetails, setCurrentProjectDetails] = useState(
+    ProjectList[currentProject]
+  );
+  useEffect(() => {
+    setCurrentProjectDetails(ProjectList[currentProject]);
+  }, [currentProject]);
+  console.log(currentProjectDetails);
+
   return (
     <>
-      <div className="flex justify-around">
-        <div className="flex mx-12 flex-col h-screen justify-between py-10 px-20">
+      <div className="flex justify-between">
+        <div className="flex flex-col h-screen justify-between py-10 px-20">
           <div>
             <Link
               to="/"
@@ -31,16 +61,16 @@ const Projects = () => {
               things we’ve done—so far.
             </div>
           </div>
-          <div className="flex flex-col w-1/2">
+          <div className="flex flex-col ">
             <div className="font-bold text-transparent text-8xl sm:text-5xl bg-clip-text bg-gradient-to-r from-[#2D8A63] to-[#295B02] pb-3">
-              pretzel
+              {currentProjectDetails.name}
             </div>
-            <div className="font-medium text-transparent text-2xl bg-clip-text bg-gradient-to-r from-[#B3E0CD] to-[#F7FFF1] pb-3">
-              A discord bot that ports MLS Course offerings to discord.
+            <div className="font-medium text-transparent text-2xl w-1/2 bg-clip-text bg-gradient-to-r from-[#B3E0CD] to-[#F7FFF1] pb-3">
+              {currentProjectDetails.description}
             </div>
             <div className="w-1/2">
-              <div className="text-[#F1FFED] bg-gradient-to-r from-[#365D41] to-[#5EA56E] text-center font-bold rounded-[36px] text-lg px-1 py-2 shadow-md hover:brightness-75 transition">
-                {">>"} read more
+              <div className="inline-block text-[#F1FFED] bg-gradient-to-r from-[#365D41] to-[#5EA56E] text-center font-bold rounded-[36px] text-lg px-4 py-2 shadow-md hover:brightness-75 transition">
+                {">>"} <Link to="https://a.berde.co">read more</Link>
               </div>
             </div>
           </div>
@@ -65,7 +95,7 @@ const Projects = () => {
             </Link>
           </div>
         </div>
-        <div className="mx-36">
+        <div className="mx-24">
           <Swiper
             direction="vertical"
             slidesPerView={3}
@@ -77,16 +107,30 @@ const Projects = () => {
             modules={[FreeMode, Pagination]}
             className="mySwiper h-screen"
           >
-            {ProjectList.map((project) => {
+            {ProjectList.map((project, index) => {
+              let isSelected = currentProject === index;
+
               return (
                 <>
                   <SwiperSlide className="h-full flex items-center justify-center">
                     <div
-                      className={`w-[750px] h-64 rounded-[36px] shadow-xl relative bg-[url('./assets/${project.bgPicture}')] bg-cover bg-center flex flex-col justify-end px-12 py-8 text-white font-Montserrat font-bold`}
+                      className={`w-[750px] h-64 rounded-[36px] shadow-xl relative bg-[url('./assets/ls360.png')] bg-cover bg-center flex flex-col justify-end px-12 py-8 text-white font-Montserrat font-bold`}
+                      onClick={() => {
+                        setCurrentProject(index);
+                        console.log(isSelected);
+                      }}
                     >
-                      <div className="absolute inset-0 bg-black opacity-50 rounded-[36px]"></div>
+                      {isSelected ? null : (
+                        <>
+                          <div className="absolute inset-0 bg-black opacity-50 rounded-[36px]"></div>
+                        </>
+                      )}
                       <div className="relative z-10">
-                        <div className="text-4xl">{project.name}</div>
+                        {isSelected ? null : (
+                          <>
+                            <div className="text-4xl">{project.name}</div>
+                          </>
+                        )}
                       </div>
                     </div>
                   </SwiperSlide>
