@@ -27,7 +27,7 @@ const Projects = () => {
       bgPicture: Pretzel,
       description:
         "A discord bot that gives users available classes during Enlistment Season",
-      link: "https://a.berde.co/",
+      link: "https://github.com/zelkim/pretzel",
     },
     {
       name: "theRange",
