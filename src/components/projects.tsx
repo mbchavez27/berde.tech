@@ -8,14 +8,32 @@ import "swiper/css/free-mode";
 import { FreeMode, Pagination } from "swiper/modules";
 import { useEffect, useState } from "react";
 
+import Pretzel from "../assets/pretzel.png";
+import theRange from "../assets/theRange.png";
+import ls360 from "../assets/ls360.png";
+
 const Projects = () => {
   //Gives Lists of Projects
   const ProjectList = [
     {
       name: "Archers API",
-      bgPicture: "./assets/ls360.png",
+      bgPicture: ls360,
       description:
         "An API that enables users to access the data of each classes in DLSU",
+      link: "https://a.berde.co/",
+    },
+    {
+      name: "Pretzel",
+      bgPicture: Pretzel,
+      description:
+        "A discord bot that gives users available classes during Enlistment Season",
+      link: "https://a.berde.co/",
+    },
+    {
+      name: "theRange",
+      bgPicture: theRange,
+      description:
+        "A Web App that displays current vacant classrooms in each buildings of the DLSU-Manila Campus",
       link: "https://a.berde.co/",
     },
   ];
@@ -83,7 +101,7 @@ const Projects = () => {
             </a>
             <Link
               to="/Projects"
-              className="font-medium text-transparent text-xl bg-clip-text bg-gradient-to-r from-[#BCEBC1] to-[#6FC978] mt-6 mr-8 hover:brightness-50 transition"
+              className="font-bold text-transparent text-xl bg-clip-text bg-gradient-to-r from-[#BCEBC1] to-[#6FC978] mt-6 mr-8 hover:brightness-50 transition"
             >
               Our Projects
             </Link>
@@ -99,7 +117,7 @@ const Projects = () => {
               clickable: true,
             }}
             modules={[FreeMode, Pagination]}
-            className="mySwiper h-screen"
+            className="h-screen"
           >
             {ProjectList.map((project, index) => {
               let isSelected = currentProject === index;
@@ -108,10 +126,10 @@ const Projects = () => {
                 <>
                   <SwiperSlide className="h-full flex items-center justify-center">
                     <div
-                      className={`w-[750px] h-64 rounded-[36px] shadow-xl relative bg-[url('./assets/ls360.png')] bg-cover bg-center flex flex-col justify-end px-12 py-8 text-white font-Montserrat font-bold`}
+                      className={`w-[750px] h-64 rounded-[36px] shadow-xl relative bg-cover bg-center flex flex-col justify-end px-12 py-8 text-white font-Montserrat font-bold transition hover:-translate-y-1`}
+                      style={{ backgroundImage: `url(${project.bgPicture})` }}
                       onClick={() => {
                         setCurrentProject(index);
-                        console.log(isSelected);
                       }}
                     >
                       {isSelected ? null : (
