@@ -27,24 +27,24 @@ const Home = () => {
             for Digital Entrepreneurs.
           </div>
           <div className="flex">
-            <a
-              href="#"
+            <Link
+              to="/AboutUs"
               className="font-medium text-transparent text-xl bg-clip-text bg-gradient-to-r from-[#BCEBC1] to-[#6FC978] mt-6 mr-8 hover:brightness-50 transition"
             >
               About Us
-            </a>
+            </Link>
+            <Link
+              to="/Projects"
+              className="font-bold text-transparent text-xl bg-clip-text bg-gradient-to-r from-[#BCEBC1] to-[#6FC978] mt-6 mr-8 hover:brightness-50 transition"
+            >
+              Our Projects
+            </Link>
             <a
               href="#"
               className="font-medium text-transparent text-xl bg-clip-text bg-gradient-to-r from-[#BCEBC1] to-[#6FC978] mt-6 mr-8 hover:brightness-50 transition"
             >
               Contact Us
-            </a>{" "}
-            <Link
-              to="Projects"
-              className="font-medium text-transparent text-xl bg-clip-text bg-gradient-to-r from-[#BCEBC1] to-[#6FC978] mt-6 mr-8 hover:brightness-50 transition"
-            >
-              Our Projects
-            </Link>
+            </a>
           </div>
         </div>
       </div>

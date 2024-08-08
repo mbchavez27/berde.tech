@@ -40,7 +40,7 @@ const Projects = () => {
 
   const [currentProject, setCurrentProject] = useState(0); //Gets the Current Project Index
   const [currentProjectDetails, setCurrentProjectDetails] = useState(
-    ProjectList[currentProject]
+    ProjectList[currentProject],
   ); //Gets the Project Details of the Current Project
 
   useEffect(() => {
@@ -87,24 +87,24 @@ const Projects = () => {
             </div>
           </div>
           <div>
-            <a
-              href="#"
+            <Link
+              to="/AboutUs"
               className="font-medium text-transparent text-xl bg-clip-text bg-gradient-to-r from-[#BCEBC1] to-[#6FC978] mt-6 mr-8 hover:brightness-50 transition"
             >
               About Us
-            </a>
-            <a
-              href="#"
-              className="font-medium text-transparent text-xl bg-clip-text bg-gradient-to-r from-[#BCEBC1] to-[#6FC978] mt-6 mr-8 hover:brightness-50 transition"
-            >
-              Contact Us
-            </a>
+            </Link>
             <Link
               to="/Projects"
               className="font-bold text-transparent text-xl bg-clip-text bg-gradient-to-r from-[#BCEBC1] to-[#6FC978] mt-6 mr-8 hover:brightness-50 transition"
             >
               Our Projects
             </Link>
+            <a
+              href="#"
+              className="font-medium text-transparent text-xl bg-clip-text bg-gradient-to-r from-[#BCEBC1] to-[#6FC978] mt-6 mr-8 hover:brightness-50 transition"
+            >
+              Contact Us
+            </a>
           </div>
         </div>
         <div className="mx-24">
@@ -120,7 +120,7 @@ const Projects = () => {
             className="h-screen"
           >
             {ProjectList.map((project, index) => {
-              let isSelected = currentProject === index;
+              const isSelected = currentProject === index;
 
               return (
                 <>
