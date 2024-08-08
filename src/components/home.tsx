@@ -35,12 +35,12 @@ const Home = () => {
             </Link>
             <Link
               to="/Projects"
-              className="font-bold text-transparent text-xl bg-clip-text bg-gradient-to-r from-[#BCEBC1] to-[#6FC978] mt-6 mr-8 hover:brightness-50 transition"
+              className="font-medium text-transparent text-xl bg-clip-text bg-gradient-to-r from-[#BCEBC1] to-[#6FC978] mt-6 mr-8 hover:brightness-50 transition"
             >
               Our Projects
             </Link>
             <a
-              href="#"
+              href="mailto:tech.berde@gmail.com"
               className="font-medium text-transparent text-xl bg-clip-text bg-gradient-to-r from-[#BCEBC1] to-[#6FC978] mt-6 mr-8 hover:brightness-50 transition"
             >
               Contact Us
