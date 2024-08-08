@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
+import { NavBar } from "./navbar";
+
 const Home = () => {
   //Animates onPage Load
   const [isVisible, setIsVisible] = useState(false);
@@ -27,24 +29,7 @@ const Home = () => {
             for Digital Entrepreneurs.
           </div>
           <div className="flex">
-            <Link
-              to="/AboutUs"
-              className="font-medium text-transparent text-xl bg-clip-text bg-gradient-to-r from-[#BCEBC1] to-[#6FC978] mt-6 mr-8 hover:brightness-50 transition"
-            >
-              About Us
-            </Link>
-            <Link
-              to="/Projects"
-              className="font-medium text-transparent text-xl bg-clip-text bg-gradient-to-r from-[#BCEBC1] to-[#6FC978] mt-6 mr-8 hover:brightness-50 transition"
-            >
-              Our Projects
-            </Link>
-            <a
-              href="mailto:tech.berde@gmail.com"
-              className="font-medium text-transparent text-xl bg-clip-text bg-gradient-to-r from-[#BCEBC1] to-[#6FC978] mt-6 mr-8 hover:brightness-50 transition"
-            >
-              Contact Us
-            </a>
+            <NavBar></NavBar>
           </div>
         </div>
       </div>

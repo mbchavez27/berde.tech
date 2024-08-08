@@ -12,6 +12,8 @@ import Pretzel from "../assets/pretzel.png";
 import theRange from "../assets/theRange.png";
 import ls360 from "../assets/ls360.png";
 
+import { NavBar } from "./navbar";
+
 const Projects = () => {
   //Gives Lists of Projects
   const ProjectList = [
@@ -40,7 +42,7 @@ const Projects = () => {
 
   const [currentProject, setCurrentProject] = useState(0); //Gets the Current Project Index
   const [currentProjectDetails, setCurrentProjectDetails] = useState(
-    ProjectList[currentProject]
+    ProjectList[currentProject],
   ); //Gets the Project Details of the Current Project
 
   useEffect(() => {
@@ -61,7 +63,7 @@ const Projects = () => {
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
         }`} //Animates on Page Load
       >
-        <div className="flex flex-col h-screen justify-between py-10 px-20">
+        <div className="flex flex-col h-screen justify-between pl-24 py-10">
           <div>
             <Link
               to="/"
@@ -77,41 +79,24 @@ const Projects = () => {
             <div className="font-bold text-transparent text-8xl sm:text-5xl bg-clip-text bg-gradient-to-r from-[#2D8A63] to-[#295B02] pb-3">
               {currentProjectDetails.name}
             </div>
-            <div className="font-medium text-transparent text-2xl lg:w-full w-1/2 bg-clip-text bg-gradient-to-r from-[#B3E0CD] to-[#F7FFF1] pb-3">
+            <div className="font-medium text-transparent text-2xl w-1/2 bg-clip-text bg-gradient-to-r from-[#B3E0CD] to-[#F7FFF1] pb-3">
               {currentProjectDetails.description}
             </div>
             <div className="w-1/2">
-              {/* <div className="inline-block text-[#F1FFED] bg-gradient-to-r from-[#365D41] to-[#5EA56E] text-center font-bold rounded-[36px] text-lg px-4 py-2 shadow-md hover:brightness-75 transition">
+              <div className="inline-block text-[#F1FFED] bg-gradient-to-r from-[#365D41] to-[#5EA56E] text-center font-bold rounded-[36px] text-lg px-4 py-2 shadow-md hover:brightness-75 transition">
                 {">>"} <Link to="https://a.berde.co">read more</Link>
-              </div> */}
+              </div>
             </div>
           </div>
           <div>
-            <Link
-              to="/AboutUs"
-              className="font-medium text-transparent text-xl bg-clip-text bg-gradient-to-r from-[#BCEBC1] to-[#6FC978] mt-6 lg:mr-4 mr-8 hover:brightness-50 transition"
-            >
-              About Us
-            </Link>
-            <Link
-              to="/Projects"
-              className="font-bold text-transparent text-xl bg-clip-text bg-gradient-to-r from-[#BCEBC1] to-[#6FC978] mt-6 lg:mr-4 mr-8 hover:brightness-50 transition"
-            >
-              Our Projects
-            </Link>
-            <a
-              href="mailto:tech.berde@gmail.com"
-              className="font-medium text-transparent text-xl bg-clip-text bg-gradient-to-r from-[#BCEBC1] to-[#6FC978] mt-6 lg:mr-4 r-8 hover:brightness-50 transition"
-            >
-              Contact Us
-            </a>
+            <NavBar></NavBar>
           </div>
         </div>
-        <div className="mx-24">
+        <div className="pr-24">
           <Swiper
             direction="vertical"
             slidesPerView={3}
-            spaceBetween={-15}
+            spaceBetween={-100}
             freeMode={true}
             pagination={{
               clickable: true,
@@ -124,9 +109,9 @@ const Projects = () => {
 
               return (
                 <>
-                  <SwiperSlide className="h-full flex items-center justify-center">
+                  <SwiperSlide className="h-full flex items-center">
                     <div
-                      className={`w-[750px] lg:h-56 h-64 rounded-[36px] shadow-xl relative bg-cover bg-center flex flex-col justify-end px-12 py-8 text-white font-Montserrat font-bold transition hover:-translate-y-1`}
+                      className={`w-[750px] h-64 rounded-[36px] shadow-xl relative bg-cover bg-center flex flex-col justify-end px-12 py-8 text-white font-Montserrat font-bold transition hover:-translate-y-1`}
                       style={{ backgroundImage: `url(${project.bgPicture})` }}
                       onClick={() => {
                         setCurrentProject(index);

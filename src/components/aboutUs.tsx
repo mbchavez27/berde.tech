@@ -8,9 +8,11 @@ import "swiper/css/free-mode";
 import { FreeMode, Pagination } from "swiper/modules";
 import { useEffect, useState } from "react";
 
-import Pretzel from "../assets/pretzel.png";
+import max from "../assets/maxDP.jpg";
 import theRange from "../assets/theRange.png";
 import ls360 from "../assets/ls360.png";
+
+import { NavBar } from "./navbar";
 
 const AboutUs = () => {
   //
@@ -25,13 +27,13 @@ const AboutUs = () => {
     },
     {
       name: "Pretzel",
-      bgPicture: Pretzel,
+      bgPicture: max,
       description:
         "A discord bot that gives users available classes during Enlistment Season",
       link: "https://github.com/zelkim/pretzel",
     },
     {
-      name: "theRange",
+      name: "Jose Simbillo",
       bgPicture: theRange,
       description:
         "A Web App that displays current vacant classrooms in each buildings of the DLSU-Manila Campus",
@@ -41,7 +43,7 @@ const AboutUs = () => {
 
   const [currentProject, setCurrentProject] = useState(0); //Gets the Current Project Index
   const [currentProjectDetails, setCurrentProjectDetails] = useState(
-    ProjectList[currentProject]
+    ProjectList[currentProject],
   ); //Gets the Project Details of the Current Project
 
   useEffect(() => {
@@ -62,7 +64,7 @@ const AboutUs = () => {
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
         }`} //Animates on Page Load
       >
-        <div className="flex flex-col h-screen justify-between py-10 px-20">
+        <div className="flex flex-col h-screen justify-between pl-24 py-10">
           <div>
             <Link
               to="/"
@@ -75,10 +77,10 @@ const AboutUs = () => {
             </div>
           </div>
           <div className="flex flex-col ">
-            <div className="font-bold text-transparent text-8xl sm:text-5xl bg-clip-text bg-gradient-to-r from-[#2D8A63] to-[#295B02] pb-3">
+            <div className="font-bold text-transparent w-1/2 text-8xl sm:text-5xl bg-clip-text bg-gradient-to-r from-[#2D8A63] to-[#295B02] pb-3">
               {currentProjectDetails.name}
             </div>
-            <div className="font-medium text-transparent text-2xl lg:w-full w-1/2 bg-clip-text bg-gradient-to-r from-[#B3E0CD] to-[#F7FFF1] pb-3">
+            <div className="font-medium text-transparent text-2xl w-1/2 bg-clip-text bg-gradient-to-r from-[#B3E0CD] to-[#F7FFF1] pb-3">
               {currentProjectDetails.description}
             </div>
             <div className="w-1/2">
@@ -93,31 +95,16 @@ const AboutUs = () => {
             </div>
           </div>
           <div>
-            <Link
-              to="/AboutUs"
-              className="font-bold text-transparent text-xl bg-clip-text bg-gradient-to-r from-[#BCEBC1] to-[#6FC978] mt-6 mr-8 hover:brightness-50 transition"
-            >
-              About Us
-            </Link>
-            <Link
-              to="/Projects"
-              className="font-medium text-transparent text-xl bg-clip-text bg-gradient-to-r from-[#BCEBC1] to-[#6FC978] mt-6 mr-8 hover:brightness-50 transition"
-            >
-              Our Projects
-            </Link>
-            <a
-              href="mailto:tech.berde@gmail.com"
-              className="font-medium text-transparent text-xl bg-clip-text bg-gradient-to-r from-[#BCEBC1] to-[#6FC978] mt-6 mr-8 hover:brightness-50 transition"
-            >
-              Contact Us
-            </a>
+            <NavBar></NavBar>
           </div>
         </div>
-        <div className="mx-24">
+        <div className="pr-24">
           <Swiper
             direction="vertical"
-            slidesPerView={3}
-            spaceBetween={-15}
+            onSlideChange={(swiper) => {
+              setCurrentProject(swiper.activeIndex);
+            }}
+            slidesPerView={1}
             freeMode={true}
             pagination={{
               clickable: true,
@@ -130,13 +117,10 @@ const AboutUs = () => {
 
               return (
                 <>
-                  <SwiperSlide className="h-full flex items-center justify-center">
+                  <SwiperSlide key={index} className="h-full flex items-center">
                     <div
-                      className={`w-[750px] lg:h-56 h-64 rounded-[36px] shadow-xl relative bg-cover bg-center flex flex-col justify-end px-12 py-8 text-white font-Montserrat font-bold transition hover:-translate-y-1`}
+                      className={`w-[750px] h-[500px] rounded-[36px] shadow-xl relative bg-cover bg-center flex flex-col justify-end px-12 py-8 text-white font-Montserrat font-bold transition hover:-translate-y-1`}
                       style={{ backgroundImage: `url(${project.bgPicture})` }}
-                      onClick={() => {
-                        setCurrentProject(index);
-                      }}
                     >
                       {isSelected ? null : (
                         <>
